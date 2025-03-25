@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -31,7 +31,7 @@ model Deal {
   minInvestment   Float
   accreditedOnly  Boolean   @default(false)
   sponsorId       String
-  description     String    @db.Text
+  description     String
   dealUrl         String
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
@@ -42,7 +42,7 @@ model Sponsor {
   id            String    @id @default(cuid())
   name          String
   website       String
-  description   String    @db.Text
+  description   String
   googleReviews Float?
   userReviews   Float?
   createdAt     DateTime  @default(now())
