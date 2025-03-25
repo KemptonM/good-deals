@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String    @id @default(cuid())
+  name             String
+  email            String    @unique
+  password         String?   // Hashed password if not using OAuth
+  subscriptionStatus String   @default("inactive") // active, inactive, cancelled
+  isAccredited     Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Deal {
+  id              String    @id @default(cuid())
+  title           String
+  assetClass      String
+  minInvestment   Float
+  accreditedOnly  Boolean   @default(false)
+  sponsorId       String
+  description     String    @db.Text
+  dealUrl         String
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  sponsor         Sponsor   @relation(fields: [sponsorId], references: [id])
+}
+
+model Sponsor {
+  id            String    @id @default(cuid())
+  name          String
+  website       String
+  description   String    @db.Text
+  googleReviews Float?
+  userReviews   Float?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deals         Deal[]
+} 
