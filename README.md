@@ -1,10 +1,13 @@
 # Good Deals
 
 ## Overview
+
 A **subscription-based investment opportunity directory** that aggregates passive investment opportunities across multiple asset classes (real estate, energy, private equity, etc.).
 
 ## MVP Features
+
 ### Essential Features
+
 - **Landing Page** – Sample deals with limited details to attract subscriptions.
 - **User Authentication** – User sign-up, login, and authentication.
 - **Subscription Management** – Paywall access to full deal details (Stripe integration).
@@ -12,11 +15,13 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 - **Deal & Sponsor Pages** – Each deal and sponsor has a dedicated page with relevant details.
 
 ### Future Features
+
 - Sponsor pages with reviews (Google reviews and user reviews).
 - Deal submission portal for sponsors.
 - Automated deal aggregation (scraping/integration with investment platforms).
 
 ## Tech Stack
+
 | Component  | Tech Stack |
 |------------|-----------|
 | **Frontend** | React (Next.js for SEO and SSR) |
@@ -28,24 +33,31 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 | **Scraping** (if needed) | Scrapy, BeautifulSoup, or third-party APIs |
 
 ## Database Schema
+
 ### Users Table
+
 | id | name | email | password_hash | subscription_status | is_accredited |
 |----|------|-------|---------------|--------------------|--------------|
 | 1  | John Doe | john@example.com | (hashed) | active | true |
 
 ### Deals Table
+
 | id | title | asset_class | min_investment | accredited_only | sponsor_id | description | deal_url | created_at |
 |----|-------|-------------|---------------|----------------|------------|-------------|----------|------------|
 | 1  | Energy Deal | Energy | $50,000 | true | 2 | Investment in solar farms | example.com | 2025-03-25 |
 
 ### Sponsors Table
+
 | id | name | website | description | google_reviews | user_reviews |
 |----|------|---------|-------------|----------------|--------------|
 | 2  | Big Capital | bigcapital.com | Private equity firm | 4.5 | 4.3 |
 
 ## Development Plan
+
 ### Phase 1: Build Core App
+
 #### Frontend:
+
 - Next.js (React)
 - Landing page
 - Login/Register
@@ -53,6 +65,7 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 - Deal listing page
 
 #### Backend:
+
 - Node.js + Express OR Django
 - User authentication
 - API routes for fetching deals
@@ -63,6 +76,7 @@ A **subscription-based investment opportunity directory** that aggregates passiv
   - Secure user data and subscription status
 
 ### Phase 2: Add Features
+
 - Filters for deal searching
 - Sponsor pages with user reviews
 - Scraping/APIs for deal aggregation
@@ -70,6 +84,7 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 - Automated email notifications for new deals
 
 ## Deployment & Scaling
+
 | Component | Deployment |
 |-----------|-----------|
 | **Frontend** | Deploy with Vercel |
@@ -78,7 +93,8 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 | **Auth & Payments** | Auth0 + Stripe |
 
 ## Next Steps
-1. **Agree on scope & MVP with your partner**
+
+1. **Agree on scope & MVP**
 2. **Set up repo, build auth + basic frontend**
 3. **Integrate Stripe for payments**
 4. **Build backend for fetching & storing deals**
