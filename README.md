@@ -99,3 +99,15 @@ A **subscription-based investment opportunity directory** that aggregates passiv
 3. **Integrate Stripe for payments**
 4. **Build backend for fetching & storing deals**
 5. **Deploy MVP and test**
+
+
+## Input
+* Videos
+* Slide decks
+* Text
+* About one per day
+
+## Stuff to show per deal (previews on main page)
+* Internal rate of return
+* Minimum investment
+* Contact sponsor directly
