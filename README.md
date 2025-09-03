@@ -1,4 +1,4 @@
-# Good Deals
+# Good Deals (Proof of Concept)
 
 ## Overview
 
